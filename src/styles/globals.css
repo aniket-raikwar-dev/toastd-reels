@@ -31,9 +31,11 @@ body {
 }
 
 svg {
-   width: 30px
+   width: 30px;
+   color: #fff;
 }
 
 .video-title {
-  border: 0.5px solid rgb(180, 180, 180);
+  border: 0.5px solid rgb(173, 173, 173);
+  color: #f0f0f0
 }
