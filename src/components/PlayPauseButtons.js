@@ -4,7 +4,7 @@ const PlayPauseButtons = ({ togglePlayPause, isPlaying, reel }) => {
   return (
     <div
       onClick={togglePlayPause}
-      className="absolute left-6 bottom-14 flex flex-col gap-6"
+      className="absolute left-6 lg:bottom-12 bottom-24 flex flex-col gap-6"
     >
       <button className="flex items-center">
         {isPlaying ? (
