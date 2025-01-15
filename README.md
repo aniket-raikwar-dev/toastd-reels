@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+### Project Overview
+This project implements a video-based reel feature that dynamically adjusts its layout and functionality based on the user's screen size and interaction. The key components and features are detailed below:
 
-## Getting Started
+#### Features: 
+##### Responsive Design
+It support on multiple devices like mobiles, tablets and desktop.
 
-First, run the development server:
+##### Video Playback Control
+Videos automatically play when they are in view (active) and pause when out of view.
+Users can manually toggle play and pause via a button overlay on the video.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##### Intersection Observer
+Used to track which video is currently in view and dynamically set the active index.
+Ensures only the active video plays while others remain paused to optimize performance.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##### Product Tags
+Each reel can have product tags displayed at specific positions over the video.
+These tags link to product pages and provide interactive functionality.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+#### Code Highlights:
+##### Reel Component
+Manages the video state (e.g., play, pause) using the useRef and useState hooks.
+Dynamically updates video playback based on the isActive prop using useEffect.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+##### VideoPlayer Component
+Handles rendering of the video element with Tailwind classes for responsive design.
+Automatically plays or pauses the video based on the isActive state.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+##### ReelContainer Component: 
+Renders the list of reels and maintains the active reel index.
+Implements an IntersectionObserver to dynamically update the active index as the user scrolls.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##### ActionButtons Component
+Here, we have all the buttons - like, share, product tag, comment.
 
-## Learn More
+### Tools and Libraries Used: 
+Next JS: For building reusable components and managing state.
+Tailwind CSS: For styling and responsive design.
+JavaScript: For logic implementation and DOM manipulation.
 
-To learn more about Next.js, take a look at the following resources:
+### Summary
+This project demonstrates a robust and responsive implementation of a reel-based video player with smooth scrolling and playback controls. It is optimized for performance and usability across devices and can be further extended with additional features.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
